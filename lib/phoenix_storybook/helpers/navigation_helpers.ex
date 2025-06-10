@@ -21,7 +21,7 @@ defmodule PhoenixStorybook.NavigationHelpers do
     |> build_path(story_path, query)
   end
 
-  @base_path Application.compile_env(:pace, [Pace.Endpoint, :url, :host])
+  @base_path Application.compile_env(:pace, [PaceWeb.Endpoint, :url, :path], "")
 
   defp build_path(root_path, story_path, query) do
     path = Path.join([@base_path, root_path, story_path])
